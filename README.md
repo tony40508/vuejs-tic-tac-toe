@@ -3,4 +3,4 @@
 > * Vue.js v2.3.4 <br>
 > * Firebase v4.1.3
 
-# [:video_game: Play Now!](https://tony40508.github.io/vuejs-tic-tac-toe/)
+## :video_game: [Play Now!](https://tony40508.github.io/vuejs-tic-tac-toe/)
