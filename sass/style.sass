@@ -1,0 +1,112 @@
+$color_blue: #46f
+$color_red: #f35
+$color_bg: #222
+
+*
+  position: relative
+  font-family: 'Fjalla One'
+
+@mixin size($w, $h:$w)
+  width: $w
+  height: $h
+
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  
+html, body
+  +size(100%)
+  background-color: $color_bg
+  margin: 0
+  color: #fff
+  text-align: center
+  +flexCenter
+  
+  
+.blockArea
+  +size(150px * 3)
+  display: flex
+  flex-wrap: wrap
+  // flex-direction: column
+  +flexCenter
+.block
+  +size(150px)
+  border: 1px solid rgba(white, 0.3)
+  box-sizing: border-box
+  cursor: pointer
+  +flexCenter
+  &.small
+    +size(60px)
+  .smallNum
+    position: absolute
+    left: 0
+    top: 0
+    opacity: 0.8
+  &:before, &:after
+    content: ""
+    display: block
+    transition: 0.5s
+  &.circle
+    &:before, &:after
+      border-radius: 50%
+    &:before
+      +size(90%)
+      background-color: $color_red
+    &:after
+      +size(60%)
+      position: absolute
+      background-color: $color_bg
+    
+  &.cross
+    &:before, &:after
+      +size(90%, 15%)
+      background-color: $color_blue
+      border-radius: 0px
+    &:before
+      transform: rotate(45deg)
+    &:after
+      position: absolute
+      transform: rotate(-45deg)
+    
+.btn
+  cursor: pointer
+  display: inline-block
+  &:after
+    content: ""
+    width: 0%
+    height: 3px
+    background-color: #B99362
+    position: absolute
+    top: 30px
+    left: 50%
+    transform: translateX(-50%)
+    transition: width 0.3s
+  &:hover
+    color: #B99362
+    &:after
+      width: 100%
+  
+.small
+  left: 50%
+  transform: translateX(-50%)
+  margin-bottom: 20px
+  
+h1
+  color: #ffbb33
+  
+.talks
+  position: fixed
+  left: 0
+  bottom: 0
+  background-color: #333
+  list-style: none
+  padding: 10px
+  transition: 0.5s
+  li
+    padding: 5px
+    width: 200px
+    border-bottom: solid 1px rgba(white, 0.1)
+
+  &.active
+    left: -200px

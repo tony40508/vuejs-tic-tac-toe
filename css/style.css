@@ -1,0 +1,155 @@
+* {
+  position: relative;
+  font-family: "Fjalla One";
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blockArea {
+  width: 450px;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.block.small {
+  width: 60px;
+  height: 60px;
+}
+.block .smallNum {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+}
+.block:before, .block:after {
+  content: "";
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.block.circle:before, .block.circle:after {
+  border-radius: 50%;
+}
+.block.circle:before {
+  width: 90%;
+  height: 90%;
+  background-color: #f35;
+}
+.block.circle:after {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  background-color: #222;
+}
+.block.cross:before, .block.cross:after {
+  width: 90%;
+  height: 15%;
+  background-color: #46f;
+  border-radius: 0px;
+}
+.block.cross:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.block.cross:after {
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+}
+.btn:after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #B99362;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.btn:hover {
+  color: #B99362;
+}
+.btn:hover:after {
+  width: 100%;
+}
+
+.small {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #ffbb33;
+}
+
+.talks {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #333;
+  list-style: none;
+  padding: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.talks li {
+  padding: 5px;
+  width: 200px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+.talks.active {
+  left: -200px;
+}

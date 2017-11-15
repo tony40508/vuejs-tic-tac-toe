@@ -1,0 +1,23 @@
+#app
+  h1 tic tac toe in Vue.js
+  h2 Player
+  .block.small(:class="{circle: turn == 1, cross: turn == -1}")
+  
+  .blockArea 
+    .block(v-for="(block, id) in blocks",
+           :class="{circle: block.type == 1, cross: block.type == -1}",
+           @click="playGo(block)")
+      .smallNum {{ id + 1 }}
+  
+  h2.btn(@click="restart") Restart
+  h1 {{ winText }}
+  
+  ul.talks
+    li(v-for="(t, id) in talks") {{ t.message }}
+    li
+      input(v-model="nowTalk") 
+      button.send(@click="pushTalk(nowTalk)") Send
+
+
+ 
+  
